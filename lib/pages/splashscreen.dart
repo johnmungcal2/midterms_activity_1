@@ -13,21 +13,34 @@ class Splashscreen extends HookConsumerWidget {
       Future.delayed(Duration(milliseconds: 500), () {
         opacity.value = 1.0;
         Future.delayed(Duration(seconds: 3), () {
-          Navigator.pushReplacementNamed(context, '/home');
+          Navigator.pushReplacementNamed(context, '/login');
         });
       });
     }, const []);
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.primary, 
       body: Center(
         child: AnimatedOpacity(
           opacity: opacity.value,
           duration: Duration(seconds: 1),
-          child: Text(
-            "Car Rental App",
-            style: TextStyle(
-                fontSize: 30, color: Theme.of(context).colorScheme.onPrimary),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.directions_car,
+                size: 100,
+                color: Theme.of(context).colorScheme.onPrimary, 
+              ),
+              const SizedBox(height: 20),
+              Text(
+                "Car Rental App",
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Theme.of(context).colorScheme.onPrimary, 
+                ),
+              ),
+            ],
           ),
         ),
       ),

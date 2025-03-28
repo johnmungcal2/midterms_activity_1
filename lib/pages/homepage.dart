@@ -28,6 +28,13 @@ class HomePage extends HookConsumerWidget {
           'Available Cars',
           style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
         ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back), 
+          onPressed: () {
+            Navigator.pushReplacementNamed(
+                context, '/login'); 
+          },
+        ),
         actions: [
           DropdownButton(
             value: selectedCategory.value,
